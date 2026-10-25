@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Accueil – École Abou el Kacem Chebbi</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+<div id="app"></div><div id="modal"></div><div id="toast" role="status"></div>
+<script src="core.js"></script>
+<script>
+load();
+const PAGES=[['admin.html','Administrateur','Direction · accès complet'],['enseignant.html','Enseignante','Sonia Trabelsi · CP-A'],['parent.html','Parent','M. Ben Salah · parent de Yassine et Lina'],['eleve.html','Élève','Yassine Ben Salah · CP-A'],['comptabilite.html','Comptabilité','Paiements et inscriptions']];
+$('#app').innerHTML=`<div class=login><div class=sheet><h1>École Abou el Kacem Chebbi</h1><p>Gestion de l’école primaire. Choisissez l’espace à ouvrir.</p><div class=prof>${J(PAGES.map(p=>`<a class=btn href="${p[0]}" style="text-decoration:none">${p[1]}<small>${p[2]}</small></a>`))}</div><div class=ha><button class=btn onclick=pre()>Pré-inscrire un enfant</button><button class="btn sm" onclick=reset()>Réinitialiser la démo</button></div><p class=note>Démo : les données sont enregistrées dans ce navigateur et partagées entre les espaces.</p></div></div>`;
+</script>
+</body>
+</html>
